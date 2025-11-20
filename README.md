@@ -1,8 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# QR Code Generator
 
-## Getting Started
+A modern, feature-rich QR code generator built with Next.js 16, TypeScript, and Material UI. Generate beautiful QR codes with customizable colors and download them in multiple formats.
 
-First, run the development server:
+![QR Code Generator](https://img.shields.io/badge/Next.js-16.0-black?style=for-the-badge&logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)
+![Material UI](https://img.shields.io/badge/Material--UI-Latest-0081CB?style=for-the-badge&logo=mui)
+
+## ✨ Features
+
+- **Real-time QR Code Generation** - Instant QR code creation as you type
+- **Customizable Size** - Adjust QR code size from 128px to 512px with an intuitive slider
+- **10 Color Schemes** - Choose from carefully selected color combinations that maintain high contrast for optimal scanning:
+  - Classic (Black on White)
+  - Ocean (Dark Blue on Light Blue)
+  - Forest (Dark Green on Light Green)
+  - Sunset (Dark Orange on Light Peach)
+  - Royal (Deep Purple on Light Purple)
+  - Berry (Dark Pink on Light Pink)
+  - Night (White on Dark Gray - inverted)
+  - Mint (Dark Teal on Light Mint)
+  - Coral (Dark Red-Orange on Light Coral)
+  - Lavender (Dark Indigo on Light Lavender)
+- **Multiple Export Formats** - Download your QR codes in:
+  - PNG (with transparency support)
+  - JPEG (with solid background)
+  - SVG (vector format for scalability)
+- **Modern UI/UX** - Beautiful gradient background with Material Design components
+- **Responsive Design** - Works seamlessly on desktop and mobile devices
+- **High Error Correction** - Level H error correction for maximum reliability
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18.17 or later
+- npm, yarn, pnpm, or bun
+
+### Installation
+
+1. Clone the repository or navigate to the project directory:
+
+```bash
+cd qr-code-app
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+# or
+bun install
+```
+
+3. Run the development server:
 
 ```bash
 npm run dev
@@ -14,23 +68,85 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) (or the port shown in your terminal) in your browser to see the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Framework**: [Next.js 16](https://nextjs.org/) with App Router
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **UI Library**: [Material UI (MUI)](https://mui.com/)
+- **QR Code Generation**: [qrcode.react](https://github.com/zpao/qrcode.react)
+- **Styling**: Emotion (CSS-in-JS via MUI)
+- **Build Tool**: Turbopack
 
-## Learn More
+## 📁 Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+qr-code-app/
+├── src/
+│   ├── app/
+│   │   ├── page.tsx          # Main page component
+│   │   ├── layout.tsx        # Root layout with metadata
+│   │   ├── theme.ts          # Material UI theme configuration
+│   │   └── globals.css       # Global styles
+│   └── components/
+│       └── QRCodeGenerator.tsx  # Main QR code generator component
+├── public/                   # Static assets
+├── package.json
+├── tsconfig.json            # TypeScript configuration
+└── README.md
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎨 Usage
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Enter Text**: Type any text or URL into the input field
+2. **Adjust Size**: Use the slider to set your desired QR code size (128px - 512px)
+3. **Choose Colors**: Select from 10 pre-designed color schemes that ensure readability
+4. **Download**: Click on your preferred format (PNG, JPEG, or SVG) to download the QR code
 
-## Deploy on Vercel
+## 🌟 Key Features Explained
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Color Scheme Selection
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+All color combinations are designed with high contrast ratios to ensure QR codes remain scannable regardless of the color scheme chosen.
+
+### Download Formats
+
+- **PNG**: Best for web use, supports transparency
+- **JPEG**: Smaller file size, solid background
+- **SVG**: Vector format, perfect for print and scalability
+
+### Size Customization
+
+The size slider allows precise control over QR code dimensions, making it suitable for various use cases from small icons to large prints.
+
+## 🔧 Development
+
+### Build for Production
+
+```bash
+npm run build
+npm start
+```
+
+### Linting
+
+```bash
+npm run lint
+```
+
+## 📝 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check the issues page.
+
+## 📧 Support
+
+If you have any questions or need help, please open an issue in the repository.
+
+---
+
+Built with ❤️ using Next.js and Material UI
