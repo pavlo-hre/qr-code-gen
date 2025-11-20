@@ -11,7 +11,10 @@ import {
   Paper,
   Stack,
   Chip,
+  Divider,
 } from "@mui/material";
+import DownloadIcon from "@mui/icons-material/Download";
+import ImageIcon from "@mui/icons-material/Image";
 import { QRCodeSVG } from "qrcode.react";
 
 type ImageFormat = "png" | "jpeg" | "svg";
@@ -313,33 +316,104 @@ const QRCodeGenerator: React.FC = () => {
 
           {/* Download Buttons */}
           {text && (
-            <Box>
-              <Typography gutterBottom sx={{ fontWeight: 600, mb: 2 }}>
-                Download as:
+            <Box
+              sx={{
+                bgcolor: "background.paper",
+                borderRadius: 2,
+                p: 3,
+                border: "2px solid",
+                borderColor: "primary.main",
+              }}
+            >
+              <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
+                <DownloadIcon sx={{ mr: 1, color: "primary.main" }} />
+                <Typography
+                  variant="h6"
+                  sx={{ fontWeight: 700, color: "primary.main" }}
+                >
+                  Download Your QR Code
+                </Typography>
+              </Box>
+              <Typography
+                variant="body2"
+                sx={{ mb: 3, color: "text.secondary" }}
+              >
+                Choose your preferred format below:
               </Typography>
               <Stack direction="row" spacing={2} flexWrap="wrap" useFlexGap>
                 <Button
                   variant="contained"
+                  startIcon={<ImageIcon />}
                   onClick={() => downloadQRCode("png")}
-                  sx={{ borderRadius: 2, textTransform: "none", px: 3 }}
+                  size="large"
+                  sx={{
+                    borderRadius: 2,
+                    textTransform: "none",
+                    px: 4,
+                    py: 1.5,
+                    fontSize: "1rem",
+                    fontWeight: 600,
+                    boxShadow: 3,
+                    "&:hover": {
+                      boxShadow: 6,
+                      transform: "translateY(-2px)",
+                    },
+                    transition: "all 0.2s",
+                  }}
                 >
                   PNG
                 </Button>
                 <Button
                   variant="contained"
+                  startIcon={<ImageIcon />}
                   onClick={() => downloadQRCode("jpeg")}
-                  sx={{ borderRadius: 2, textTransform: "none", px: 3 }}
+                  size="large"
+                  sx={{
+                    borderRadius: 2,
+                    textTransform: "none",
+                    px: 4,
+                    py: 1.5,
+                    fontSize: "1rem",
+                    fontWeight: 600,
+                    boxShadow: 3,
+                    "&:hover": {
+                      boxShadow: 6,
+                      transform: "translateY(-2px)",
+                    },
+                    transition: "all 0.2s",
+                  }}
                 >
                   JPEG
                 </Button>
                 <Button
                   variant="contained"
+                  startIcon={<ImageIcon />}
                   onClick={() => downloadQRCode("svg")}
-                  sx={{ borderRadius: 2, textTransform: "none", px: 3 }}
+                  size="large"
+                  sx={{
+                    borderRadius: 2,
+                    textTransform: "none",
+                    px: 4,
+                    py: 1.5,
+                    fontSize: "1rem",
+                    fontWeight: 600,
+                    boxShadow: 3,
+                    "&:hover": {
+                      boxShadow: 6,
+                      transform: "translateY(-2px)",
+                    },
+                    transition: "all 0.2s",
+                  }}
                 >
                   SVG
                 </Button>
               </Stack>
+              <Typography
+                variant="caption"
+                sx={{ display: "block", mt: 2, color: "text.secondary" }}
+              >
+                💡 Tip: PNG for web, JPEG for smaller files, SVG for print
+              </Typography>
             </Box>
           )}
         </Stack>
