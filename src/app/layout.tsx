@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   title: "QR Code Generator - Create & Download QR Codes",
   description:
     "Generate QR codes instantly and download them in PNG, JPEG, SVG, or PDF format. Customize the size and create QR codes for any text or URL.",
+  icons: {
+    icon: "/qrcode-icon.svg",
+  },
 };
 
 export default function RootLayout({
